@@ -6,6 +6,7 @@ BUG(), BUG_ON(), dump_stack(), panic() example
 #### https://github.com/rishiba/
 #### Copyright 2016, Rishi Agrawal
 #### ---
+#### https://documentation.suse.com/sbp/server-linux/html/SBP-KMP-Manual-SLE12SP2/index.html
 #### https://linuxkamarada.com/en/2019/03/19/integrating-the-open-build-service-with-github/
 #### [https://www.suse.com/c/using-opensuse-build-service-create-and-distribute-kernel-module-packages/](https://www.suse.com/c/using-opensuse-build-service-create-and-distribute-kernel-module-packages/)
 
