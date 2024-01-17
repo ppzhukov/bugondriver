@@ -17,8 +17,7 @@ This package contains the bugondriver.ko module.
 
 %prep
 %setup
-cat bugondriver.spec aa
-cat /home/abuild/rpmbuild/SOURCES/bugondriver.spec
+cat /home/abuild/rpmbuild/SOURCES/bugondriver.spec aa
 set -- *
 mkdir source
 mv "$@" source/
