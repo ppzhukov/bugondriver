@@ -1,4 +1,4 @@
-# norootforbuild
+#norootforbuild
 
 Name:           bugondriver
 Version:                1.0
@@ -9,6 +9,8 @@ Group:          System/Kernel
 Source0:                %{name}-%{version}.tar.bz2
 BuildRequires:  %kernel_module_package_buildreqs
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
+
+%kernel_module_package
 
 %description
 This package contains the bugondriver.ko module.
