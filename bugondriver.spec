@@ -4,7 +4,7 @@ Name:           bugondriver
 Version:                1.0
 Release:                0
 Summary:                BUGON Kernel Module Package
-License:                GPL
+License:                GPL-3.0
 Group:          System/Kernel
 Source0:                %{name}-%{version}.tar.xz
 BuildRequires:  %{kernel_module_package_buildreqs}
