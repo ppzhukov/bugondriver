@@ -37,5 +37,3 @@ for flavor in %flavors_to_build; do
 done
 
 %changelog
-Wen Jan 17 2023 – pzhukov@suse.com
-- Initial version.
