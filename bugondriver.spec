@@ -7,7 +7,7 @@ Summary:                BUGON Kernel Module Package
 License:                GPL
 Group:          System/Kernel
 Source0:                %{name}-%{version}.tar.xz
-BuildRequires:  %kernel_module_package_buildreqs
+BuildRequires:  %{kernel_module_package_buildreqs}
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %kernel_module_package
@@ -36,10 +36,6 @@ export INSTALL_MOD_PATH=$RPM_BUILD_ROOT
 export INSTALL_MOD_DIR=updates
 for flavor in %flavors_to_build; do
        make -C %{kernel_source $flavor} modules_install M=$PWD/obj/$flavor
-       # Required to sign modules:  Invoke kernel-sign-file to sign each module
-       for x in $(find $INSTALL_MOD_PATH/lib/modules/*-$flavor/ -name '*.ko'); do
-               /usr/lib/rpm/pesign/kernel-sign-file -i pkcs7 sha256 $PWD/obj/$flavor/signing_key.priv $PWD/obj/$flavor/signing_key.x509 $x
-       done
 done
 
 %changelog
