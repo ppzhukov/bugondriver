@@ -6,7 +6,7 @@ Release:                0
 Summary:                BUGON Kernel Module Package
 License:                GPL
 Group:          System/Kernel
-Source0:                %{name}-%{version}.obscpio
+Source0:                %{name}-%{version}.tar.xz
 BuildRequires:  %kernel_module_package_buildreqs
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
