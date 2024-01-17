@@ -10,7 +10,7 @@ Group:          System/Kernel
 Source0:                %{name}-%{version}.tar.xz
 BuildRequires:  %{kernel_module_package_buildreqs}
 
-%if %{flavor} == %{nil}
+%if %{flavor} == "%{nil}"
 %else
 Requires:       kernel = %{flavor}
 BuildRequires:  kernel-source = %{flavor}
