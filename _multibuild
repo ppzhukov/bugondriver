@@ -1,0 +1,33 @@
+<multibuild>
+    <flavor>5.14.21-150400.22.1</flavor>
+    <flavor>5.14.21-150400.24.11.1</flavor>
+    <flavor>5.14.21-150400.24.18.1</flavor>
+    <flavor>5.14.21-150400.24.21.2</flavor>
+    <flavor>5.14.21-150400.24.28.1</flavor>
+    <flavor>5.14.21-150400.24.33.2</flavor>
+    <flavor>5.14.21-150400.24.38.1</flavor>
+    <flavor>5.14.21-150400.24.41.1</flavor>
+    <flavor>5.14.21-150400.24.46.1</flavor>
+    <flavor>5.14.21-150400.24.49.3</flavor>
+    <flavor>5.14.21-150400.24.55.3</flavor>
+    <flavor>5.14.21-150400.24.60.1</flavor>
+    <flavor>5.14.21-150400.24.63.1</flavor>
+    <flavor>5.14.21-150400.24.66.1</flavor>
+    <flavor>5.14.21-150400.24.69.1</flavor>
+    <flavor>5.14.21-150400.24.74.1</flavor>
+    <flavor>5.14.21-150400.24.81.1</flavor>
+    <flavor>5.14.21-150400.24.84.1</flavor>
+    <flavor>5.14.21-150400.24.88.1</flavor>
+    <flavor>5.14.21-150400.24.92.1</flavor>
+    <flavor>5.14.21-150400.24.97.1</flavor>
+    <flavor>5.14.21-150400.24.100.2</flavor>
+    <flavor>5.14.21-150500.53.2</flavor>
+    <flavor>5.14.21-150500.55.7.1</flavor>
+    <flavor>5.14.21-150500.55.12.1</flavor>
+    <flavor>5.14.21-150500.55.19.1</flavor>
+    <flavor>5.14.21-150500.55.22.1</flavor>
+    <flavor>5.14.21-150500.55.28.1</flavor>
+    <flavor>5.14.21-150500.55.31.1</flavor>
+    <flavor>5.14.21-150500.55.36.1</flavor>
+    <flavor>5.14.21-150500.55.39.1</flavor>
+</multibuild>

@@ -1,4 +1,5 @@
 #norootforbuild
+%global flavor @BUILD_FLAVOR@%{nil}
 
 Name:           bugondriver
 Version:                1.0
@@ -8,6 +9,7 @@ License:                GPL-3.0
 Group:          System/Kernel
 Source0:                %{name}-%{version}.tar.xz
 BuildRequires:  %{kernel_module_package_buildreqs}
+Requires: kernel-source = flavor
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %kernel_module_package
