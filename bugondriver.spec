@@ -10,10 +10,10 @@ Group:          System/Kernel
 Source0:                %{name}-%{version}.tar.xz
 BuildRequires:  %{kernel_module_package_buildreqs}
 
-%if %{flavor} == "%{nil}"
-%else
+%if %{flavor}
 Requires:       kernel = %{flavor}
 BuildRequires:  kernel-source = %{flavor}
+%else
 %endif
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
