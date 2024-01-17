@@ -24,44 +24,17 @@ This chapter will give you example with the proc interface on how to use the deb
 Install needs packages to your system using commands bellow:
 ```bash
 export KERNEL_VERSION=$(uname -r) # get Kernel version and Flavor
-zypper in -y make gcc build kernel-sources-$(KERNEL_VERSION)
+zypper in -y kbuild kernel-sources-$(KERNEL_VERSION)
 ```
-create Makefile
+use kbuild
 ```
-MYPROC=bugondriver
-ARCH=x86_64
-FLAVOR=default
-
-obj-m += $(MYPROC).o
-
-export KROOT=/usr/src/linux-obj/$(ARCH)/$(FLAVOR)
-
-allofit:  modules
-
-modules: clean
-
-        @$(MAKE) -C $(KROOT) M=$(PWD) modules
-
-modules_install:
-        @$(MAKE) -C $(KROOT) M=$(PWD) modules_install
-
-kernel_clean:
-        @$(MAKE) -C $(KROOT) M=$(PWD) clean
-
-clean: kernel_clean
-        rm -rf   Module.symvers modules.order
-
-insert: modules
-        sudo dmesg -c
-        sudo insmod bugondriver.ko
-
-remove: clean
-        sudo rmmod bugondriver
+kbuild
 ```
-run
+insert module
 ```bash
-make insert
+insmod bugondriver.ko
 ```
+
 ## Running the code
 
 To run the code you will have to write to the _proc_ entry. Based on the value written the system will behave differently.
@@ -71,3 +44,7 @@ You can see the output in the dmesg output.
 - BUG 2
 - DUMPSTACK 3
 - PANIC 4
+
+```bash
+echo 4 > /proc/bugon_driver
+```

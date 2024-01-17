@@ -9,7 +9,8 @@ License:                GPL-3.0
 Group:          System/Kernel
 Source0:                %{name}-%{version}.tar.xz
 BuildRequires:  %{kernel_module_package_buildreqs}
-Requires: kernel-source = %{flavor}
+Requires:       kernel = %{flavor}
+BuildRequires:  kernel-source = %{flavor}
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %kernel_module_package

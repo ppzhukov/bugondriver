@@ -10,6 +10,10 @@
 #include <asm/types.h>
 #include <linux/version.h>
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 6, 0)
+#define HAVE_PROC_OPS
+#endif
+
 #define MY_PROC_ENTRY "bugon_driver"
 
 // #define DATA "Hello World People !!!"
