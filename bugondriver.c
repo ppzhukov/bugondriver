@@ -8,6 +8,7 @@
 #include <linux/slab.h>
 #include <asm/uaccess.h>
 #include <asm/types.h>
+#include <linux/version.h>
 
 #define MY_PROC_ENTRY "bugon_driver"
 
@@ -94,10 +95,17 @@ ssize_t proc_read(struct file *filp,char *buf,size_t count, loff_t *offp )
     return count;
 }
 
-struct proc_ops proc_fops = {
-    .proc_read = proc_read,
-    .proc_write = proc_write,
-};
+#ifdef HAVE_PROC_OPS
+    struct proc_ops proc_fops = {
+        .proc_read = proc_read,
+        .proc_write = proc_write,
+    };
+#else
+    struct file_operations proc_fops = {
+        .read = proc_read,
+        .write = proc_write,
+    };
+#endif
 
 int create_new_proc_entry(void) {
     int i;
