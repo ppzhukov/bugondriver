@@ -6,7 +6,7 @@ Release:                0
 Summary:                BUGON Kernel Module Package
 License:                GPL
 Group:          System/Kernel
-Source0:                %{name}-%{version}.tar.bz2
+Source0:                %{name}-%{version}
 BuildRequires:  %kernel_module_package_buildreqs
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
