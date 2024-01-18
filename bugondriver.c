@@ -66,7 +66,7 @@ static ssize_t proc_write(struct file *filp, const char __user * buffer, size_t 
 ssize_t proc_read(struct file *filp,char *buf,size_t count, loff_t *offp )
 {
     int err;
-    char *data = PDE_DATA(file_inode(filp));
+    char *data = pde_data(file_inode(filp));
 
     if ((int) (*offp) > len) {
         return 0;
