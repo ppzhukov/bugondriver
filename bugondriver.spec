@@ -13,12 +13,12 @@ BuildRequires:  %{kernel_module_package_buildreqs}
 
 %if "%{flavor}"
 #Requires:       kernel = %{flavor}
-BuildRequires:  kernel-devel = %{flavor}
+#BuildRequires:  kernel-devel = %{flavor}
 %endif
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
-%kernel_module_package
+%kernel_module_package -v %{flavor}
 
 %description
 This package contains the bugondriver.ko module.

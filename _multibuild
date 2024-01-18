@@ -73,4 +73,6 @@
     <flavor>5.14.21-150500.55.31.1</flavor>
     <flavor>5.14.21-150500.55.36.1</flavor>
     <flavor>5.14.21-150500.55.39.1</flavor>
+
+    <flavor>5.14.21-150500.55.44.1</flavor>
 </multibuild>
