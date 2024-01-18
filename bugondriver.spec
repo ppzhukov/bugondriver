@@ -18,7 +18,7 @@ BuildRequires:  %{kernel_module_package_buildreqs}
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
-%kernel_module_package -v 5.14.21 -r 150500.55.39.
+%kernel_module_package -v 5.14.21 -r 150500.55.39.1
 #-v %{flavor}
 
 %description
