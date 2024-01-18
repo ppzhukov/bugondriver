@@ -13,7 +13,7 @@ BuildRequires:  %{kernel_module_package_buildreqs}
 
 %if "%{flavor}"
 Requires:       kernel = %{flavor}
-BuildRequires:  kernel-devel = 5.14.21-150400.24.38.1
+BuildRequires:  kernel-devel = 5.14.21-150400.24.103.1
 # %{flavor}
 %endif
 
