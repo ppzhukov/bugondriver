@@ -18,7 +18,8 @@ BuildRequires:  %{kernel_module_package_buildreqs}
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
-%kernel_module_package -v %{flavor}
+%kernel_module_package -v 5.14.21 -r 150500.55.39.
+#-v %{flavor}
 
 %description
 This package contains the bugondriver.ko module.
