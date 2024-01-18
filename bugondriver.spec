@@ -25,7 +25,6 @@ This package contains the bugondriver.ko module.
 
 %prep
 %setup
-cat /var/cache/obs/worker/root_8/.build.rpmlist
 set -- *
 mkdir source
 mv "$@" source/
