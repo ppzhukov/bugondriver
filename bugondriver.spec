@@ -10,14 +10,14 @@ Group:          System/Kernel
 Source0:                %{name}-%{version}.tar.xz
 BuildRequires:  %{kernel_module_package_buildreqs}
 
-%if "%{flavor}"
-Requires:       kernel = %{flavor}
-BuildRequires:  kernel-obs-build = %{flavor}
-%endif
+#%if "%{flavor}"
+#Requires:       kernel = %{flavor}
+#BuildRequires:  kernel-source = %{flavor}
+#%endif
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
-%kernel_module_package
+%kernel_module_package --v %{flavor}
 
 %description
 This package contains the bugondriver.ko module.
