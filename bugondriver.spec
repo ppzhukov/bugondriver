@@ -12,8 +12,9 @@ Source0:                %{name}-%{version}.tar.xz
 BuildRequires:  %{kernel_module_package_buildreqs}
 
 %if "%{flavor}"
-Requires:       kernel = %{flavor}
-BuildRequires:  kernel-source = %{flavor}
+#Requires:       kernel = %{flavor}
+BuildRequires:  kernel-source = 5.14.21-150400.24.38.1
+# %{flavor}
 %endif
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
