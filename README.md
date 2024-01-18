@@ -48,3 +48,20 @@ You can see the output in the dmesg output.
 ```bash
 echo 4 > /proc/bugon_driver
 ```
+
+## Appendix
+<services>
+  <service mode="buildtime" name="set_version" />
+  <service name="obs_scm">
+    <param name="url">https://github.com/ppzhukov/bugondriver.git</param>
+    <param name="scm">git</param>
+    <param name="revision">main</param>
+    <param name="extract">bugondriver.spec</param>
+    <param name="extract">_multibuild</param>
+  </service>
+  <service mode="buildtime" name="tar" />
+  <service mode="buildtime" name="recompress">
+    <param name="file">*.tar</param>
+    <param name="compression">xz</param>
+  </service>
+</services>
