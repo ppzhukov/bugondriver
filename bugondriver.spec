@@ -13,7 +13,7 @@ BuildRequires:  %{kernel_module_package_buildreqs}
 
 %if "%{flavor}"
 #Requires:       kernel = %{flavor}
-BuildRequires:  kernel-source = %{flavor}
+BuildRequires:  kernel-devel = %{flavor}
 %endif
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
@@ -25,7 +25,7 @@ This package contains the bugondriver.ko module.
 
 %prep
 %setup
-zypper se -s kernel-source
+cat /var/cache/obs/worker/root_8/.build.rpmlist
 set -- *
 mkdir source
 mv "$@" source/
