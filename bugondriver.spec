@@ -6,6 +6,7 @@ Version:                1.0
 Release:                0
 Summary:                BUGON Kernel Module Package
 License:                GPL-3.0
+Url:          https://github.com/ppzhukov/bugondriver
 Group:          System/Kernel
 Source0:                %{name}-%{version}.tar.xz
 BuildRequires:  %{kernel_module_package_buildreqs}
@@ -17,7 +18,7 @@ BuildRequires:  kernel-source = %{flavor}
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
-%kernel_module_package #-v %{flavor}
+%kernel_module_package
 
 %description
 This package contains the bugondriver.ko module.
