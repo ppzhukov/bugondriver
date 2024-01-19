@@ -8,21 +8,20 @@ License:                GPL-3.0
 Url:          https://github.com/ppzhukov/bugondriver
 Group:          System/Kernel
 Source0:                %{name}-%{version}.tar.xz
-BuildRequires:  %{kernel_module_package_buildreqs}
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
-%if 0%{?fedora} >= 36
-BuildRequires: redhat-rpm-config kernel-rpm-macros elfutils-libelf-devel kmod
+%if 0%{?fedora}%{?rhel}
+BuildRequires:  redhat-rpm-config kernel-rpm-macros elfutils-libelf-devel kmod
+BuildRequires:  gcc
+BuildRequires:  make
+BuildRequires:  kernel-devel
 %endif
 
-%if 0%{?rhel} >= 8
-%if %{undefined kernel_module_package_buildreqs}
-BuildRequires: redhat-rpm-config kernel-rpm-macros elfutils-libelf-devel kmod
+%if 0%{?sle_version}
+%kernel_module_package
+BuildRequires:  %{kernel_module_package_buildreqs}
 %endif
-%endif
-
-%kernel_module_package -n bugondriver
 
 %description
 This package contains the bugondriver.ko module.
