@@ -10,7 +10,7 @@ Group:          System/Kernel
 Source0:                %{name}-%{version}.tar.xz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
-%if 0%{?fedora}%{?rhel}&&!0%{?centos_version} == 700&&!0%{?rhel_version} == 700
+%if 0%{?fedora}%{?rhel}
 BuildRequires:  redhat-rpm-config kernel-rpm-macros elfutils-libelf-devel kmod
 BuildRequires:  gcc
 BuildRequires:  make
@@ -27,7 +27,6 @@ This package contains the bugondriver.ko module.
 
 %prep
 %setup
-cat bugondriver.spec
 set -- *
 mkdir source
 mv "$@" source/
