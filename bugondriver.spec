@@ -17,9 +17,6 @@ BuildRequires:  gcc
 BuildRequires:  make
 BuildRequires:  kernel-devel
 %endif
-%if 0%{?centos_version} == 700
-
-
 
 %if 0%{?sle_version}||0%{?centos_version} == 700
 %kernel_module_package
