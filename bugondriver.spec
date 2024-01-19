@@ -1,5 +1,4 @@
 #norootforbuild
-%global flavor @BUILD_FLAVOR@%{nil}
 
 Name:           bugondriver
 Version:                1.0
@@ -10,11 +9,6 @@ Url:          https://github.com/ppzhukov/bugondriver
 Group:          System/Kernel
 Source0:                %{name}-%{version}.tar.xz
 BuildRequires:  %{kernel_module_package_buildreqs}
-
-%if "%{flavor}"
-Requires:       kernel = %{flavor}
-#!BuildRequires:  kernel-default-devel = %{flavor}
-%endif
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
@@ -45,3 +39,6 @@ for flavor in %flavors_to_build; do
 done
 
 %changelog
+
+* initial version
+ - initial version
