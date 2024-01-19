@@ -40,4 +40,5 @@ done
 
 %changelog
 
-* Fri Jan 19 2024 initial version pp.zhukov@gmail.com
+* Fri Jan 19 2024 pp.zhukov@gmail.com - 1.0
+- First build
