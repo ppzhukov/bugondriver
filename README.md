@@ -1,6 +1,6 @@
 # bugondriver for SUSE Linux
 BUG(), BUG_ON(), dump_stack(), panic() example
-
+[![build result](https://build.opensuse.org/projects/home:pzhukov/packages/bugondriver/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:pzhukov/bugondriver)
 #### Forked from https://lkw.readthedocs.io/en/latest/doc/06_kernel_bug_reporting.html
 #### Linux Kernel Workbook
 #### https://github.com/rishiba/
