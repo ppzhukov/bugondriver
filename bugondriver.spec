@@ -13,7 +13,7 @@ BuildRequires:  %{kernel_module_package_buildreqs}
 
 %if "%{flavor}"
 Requires:       kernel = %{flavor}
-BuildRequires:  kernel-default-devel %{flavor}
+BuildRequires:  kernel-default-devel.%{flavor}
 %endif
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
