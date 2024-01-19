@@ -17,8 +17,6 @@ BuildRequires:  kernel-devel = %{flavor}
 BuildRequires:  kernel-syms = %{flavor}
 %endif
 
-NoSource: _multibuild
-
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %kernel_module_package
