@@ -11,14 +11,14 @@ Source0:                %{name}-%{version}.tar.xz
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
-%if 0%{?fedora}%{?rhel}&&!0%{?centos_version} == 700
+%if 0%{?fedora}%{?rhel}&&!0%{?centos_version} == 700&&!0%{?rhel_version} == 700
 BuildRequires:  redhat-rpm-config kernel-rpm-macros elfutils-libelf-devel kmod
 BuildRequires:  gcc
 BuildRequires:  make
 BuildRequires:  kernel-devel
 %endif
 
-%if 0%{?sle_version}||0%{?centos_version} == 700
+%if 0%{?sle_version}||0%{?centos_version} == 700||0%{?rhel_version} == 700
 %kernel_module_package
 BuildRequires:  %{kernel_module_package_buildreqs}
 %endif
