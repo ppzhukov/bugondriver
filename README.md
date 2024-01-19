@@ -61,6 +61,7 @@ insmod bugondriver.ko
 
 ## Appendix
 ### _service file for OBS
+```xml
 <services>
   <service mode="buildtime" name="set_version" />
   <service name="obs_scm">
@@ -75,7 +76,7 @@ insmod bugondriver.ko
     <param name="compression">xz</param>
   </service>
 </services>
-
+```
 #### https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration
 #### https://documentation.suse.com/sbp/server-linux/html/SBP-KMP-Manual-SLE12SP2/index.html
 #### https://linuxkamarada.com/en/2019/03/19/integrating-the-open-build-service-with-github/
