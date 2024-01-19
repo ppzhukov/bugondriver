@@ -25,7 +25,7 @@ zypper in -y bugondriver-kmp-default
 ```
 load module
 ```bash
-insmod /lib/modules/$(uname -r)/updates/bugondriver.ko
+insmod /lib/modules/$(uname -r)/extra/bugondriver.ko
 ```
 * send signal to kernel
 ```bash
