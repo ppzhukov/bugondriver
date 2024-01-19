@@ -12,11 +12,11 @@ BuildRequires:  %{kernel_module_package_buildreqs}
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
-%if "%{fedora_version}" 
+%if 0%{?fedora} >= 36
 BuildRequires: redhat-rpm-config
 %endif
 
-%if "%{rhel_version}"
+%if 0%{?rhel_version} >= 600
 BuildRequires: redhat-rpm-config
 %endif
 
