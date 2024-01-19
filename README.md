@@ -21,7 +21,11 @@ This chapter will give you example with the proc interface on how to use the deb
 * Add [Repositories](https://software.opensuse.org//download.html?project=home%3Apzhukov%3Abugondriver&package=bugondriver) to your system
 * Install package
 ```bash
-zypper in -y bugondriver
+zypper in -y bugondriver-kmp-default
+```
+load module
+```bash
+insmod /lib/modules/$(uname -r)/updates/bugondriver.ko
 ```
 * send signal to kernel
 ```bash
