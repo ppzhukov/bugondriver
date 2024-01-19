@@ -22,7 +22,7 @@ BuildRequires: redhat-rpm-config kernel-rpm-macros elfutils-libelf-devel kmod
 %endif
 %endif
 
-%kernel_module_package
+%kernel_module_package -n bugondriver
 
 %description
 This package contains the bugondriver.ko module.
