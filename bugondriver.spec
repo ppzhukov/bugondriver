@@ -27,6 +27,7 @@ This package contains the bugondriver.ko module.
 
 %prep
 %setup
+cat bugondriver.spec
 set -- *
 mkdir source
 mv "$@" source/
