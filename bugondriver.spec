@@ -40,5 +40,4 @@ done
 
 %changelog
 
-* initial version
- - initial version
+* Fri Jan 19 2024 initial version pp.zhukov@gmail.com
