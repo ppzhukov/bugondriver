@@ -5,13 +5,10 @@ BUG(), BUG_ON(), dump_stack(), panic() example
 
 [Repositories](https://software.opensuse.org//download.html?project=home%3Apzhukov%3Abugondriver&package=bugondriver)
 
- Forked from https://lkw.readthedocs.io/en/latest/doc/06_kernel_bug_reporting.html
- 
- Linux Kernel Workbook
- 
- https://github.com/rishiba/
- 
- Copyright 2016, Rishi Agrawal
+> Forked from https://lkw.readthedocs.io/en/latest/doc/06_kernel_bug_reporting.html
+> Linux Kernel Workbook
+> https://github.com/rishiba/
+> Copyright 2016, Rishi Agrawal
 
 ## description
 
