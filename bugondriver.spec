@@ -33,7 +33,7 @@ done
 
 %install
 export INSTALL_MOD_PATH=$RPM_BUILD_ROOT
-export INSTALL_MOD_DIR=updates
+export INSTALL_MOD_DIR=extra
 for flavor in %flavors_to_build; do
        make -C %{kernel_source $flavor} modules_install M=$PWD/obj/$flavor
 done
