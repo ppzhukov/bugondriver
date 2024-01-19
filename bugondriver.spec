@@ -32,19 +32,35 @@ mkdir source
 mv "$@" source/
 mkdir obj
 
+%if 0%{?fedora}%{?rhel}&&!0%{?centos_version} == 700&&!0%{?rhel_version} == 700
+%build
+for flavor in %flavors_to_build; do
+    rm -rf obj/$flavor
+    cp -r source obj/$flavor
+    make -C /lib/modules/$(uname -r)/build M=$PWD/obj/$flavor
+done
+%install
+export INSTALL_MOD_PATH=$RPM_BUILD_ROOT
+export INSTALL_MOD_DIR=extra
+for flavor in %flavors_to_build; do
+       make -C /lib/modules/$(uname -r)/build modules_install M=$PWD/obj/$flavor
+done
+%endif
+
+%if 0%{?sle_version}||0%{?centos_version} == 700||0%{?rhel_version} == 700
 %build
 for flavor in %flavors_to_build; do
        rm -rf obj/$flavor
        cp -r source obj/$flavor
        make -C %{kernel_source $flavor} modules M=$PWD/obj/$flavor
 done
-
 %install
 export INSTALL_MOD_PATH=$RPM_BUILD_ROOT
 export INSTALL_MOD_DIR=extra
 for flavor in %flavors_to_build; do
        make -C %{kernel_source $flavor} modules_install M=$PWD/obj/$flavor
 done
+%endif
 
 %changelog
 
