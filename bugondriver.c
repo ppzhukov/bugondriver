@@ -14,7 +14,7 @@
 #define HAVE_PROC_OPS
 #endif
 
-#define MY_PROC_ENTRY "bugon_driver"
+#define MY_PROC_ENTRY "bugondriver"
 
 // #define DATA "Hello World People !!!"
 

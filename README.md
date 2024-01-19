@@ -3,13 +3,13 @@ BUG(), BUG_ON(), dump_stack(), panic() example
 
 [![build result](https://build.opensuse.org/projects/home:pzhukov:bugondriver/packages/bugondriver/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:pzhukov:bugondriver/bugondriver)
 
-#### Forked from https://lkw.readthedocs.io/en/latest/doc/06_kernel_bug_reporting.html
-#### Linux Kernel Workbook
-#### https://github.com/rishiba/
-#### Copyright 2016, Rishi Agrawal
-#### ---
+[Repositories](https://software.opensuse.org//download.html?project=home%3Apzhukov%3Abugondriver&package=bugondriver)
 
-
+###### Forked from https://lkw.readthedocs.io/en/latest/doc/06_kernel_bug_reporting.html
+###### Linux Kernel Workbook
+###### https://github.com/rishiba/
+###### Copyright 2016, Rishi Agrawal
+###### ---
 
 ## description
 
@@ -18,7 +18,30 @@ BUG(), BUG_ON(), dump_stack() and panic() can be used in your code to report err
 For more details on these function read the chapter Debugging in the book Linux Kernel Development, 3rd Edition, Robert love.
 This chapter will give you example with the proc interface on how to use the debugging facilities given in the kernel.
 
-## Make and install modules
+## Quick Start
+* Add [Repositories](https://software.opensuse.org//download.html?project=home%3Apzhukov%3Abugondriver&package=bugondriver) to your system
+* Install package
+```bash
+zypper in -y bugondriver
+```
+* send signal to kernel
+echo 4 > /proc/bugondriver
+
+## Running the code
+
+To run the code you will have to write to the _proc_ entry. Based on the value written the system will behave differently.
+You can see the output in the dmesg output.
+
+- BUG_ON 1
+- BUG 2
+- DUMPSTACK 3
+- PANIC 4
+
+```bash
+echo 4 > /proc/bugondriver
+```
+
+## Make and install modules manualy
 [https://www.suse.com/c/using-sles-and-the-sle-sdk-build-kernel-module-package-kmp/](https://www.suse.com/c/using-sles-and-the-sle-sdk-build-kernel-module-package-kmp/)
 Install needs packages to your system using commands bellow:
 ```bash
@@ -32,20 +55,6 @@ kbuild
 insert module
 ```bash
 insmod bugondriver.ko
-```
-
-## Running the code
-
-To run the code you will have to write to the _proc_ entry. Based on the value written the system will behave differently.
-You can see the output in the dmesg output.
-
-- BUG_ON 1
-- BUG 2
-- DUMPSTACK 3
-- PANIC 4
-
-```bash
-echo 4 > /proc/bugon_driver
 ```
 
 ## Appendix
