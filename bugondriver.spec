@@ -13,13 +13,13 @@ BuildRequires:  %{kernel_module_package_buildreqs}
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %if 0%{?fedora} >= 36
-BuildRequires: redhat-rpm-config
-BuildRequires: kernel-rpm-macros
+BuildRequires: redhat-rpm-config kernel-rpm-macros elfutils-libelf-devel kmod
 %endif
 
-%if 0%{?rhel_version} >= 600
-BuildRequires: redhat-rpm-config
-BuildRequires: kernel-rpm-macros
+%if 0%{?rhel} >= 8
+%if %{undefined kernel_module_package_buildreqs}
+BuildRequires: redhat-rpm-config kernel-rpm-macros elfutils-libelf-devel kmod
+%endif
 %endif
 
 %kernel_module_package
