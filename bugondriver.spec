@@ -40,5 +40,5 @@ done
 
 %changelog
 
-* Fri Jan 19 2024 pp.zhukov@gmail.com - 1.0
+* Fri Jan 19 2024 Pavel Zhukov <pp.zhukov@gmail.com>
 - First build
