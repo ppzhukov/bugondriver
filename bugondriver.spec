@@ -1,6 +1,6 @@
 #norootforbuild
 
-Name:           bugondriver-kmp
+Name:           bugondriver
 Version:                1.0
 Release:                0
 Summary:                BUGON Kernel Module Package
