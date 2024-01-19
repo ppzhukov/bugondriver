@@ -25,7 +25,9 @@ This chapter will give you example with the proc interface on how to use the deb
 zypper in -y bugondriver
 ```
 * send signal to kernel
+```bash
 echo 4 > /proc/bugondriver
+```
 
 ## Running the code
 
@@ -37,8 +39,9 @@ You can see the output in the dmesg output.
 - DUMPSTACK 3
 - PANIC 4
 
+example:
 ```bash
-echo 4 > /proc/bugondriver
+echo 2 > /proc/bugondriver
 ```
 
 ## Make and install modules manualy
@@ -58,6 +61,7 @@ insmod bugondriver.ko
 ```
 
 ## Appendix
+### _service file for OBS
 <services>
   <service mode="buildtime" name="set_version" />
   <service name="obs_scm">
