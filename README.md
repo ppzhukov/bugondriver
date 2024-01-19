@@ -1,17 +1,14 @@
 # bugondriver for SUSE Linux
 BUG(), BUG_ON(), dump_stack(), panic() example
 
-[![build result](https://build.opensuse.org/projects/home:pzhukov/packages/bugondriver/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:pzhukov/bugondriver)
+[![build result](https://build.opensuse.org/projects/home:pzhukov:bugondriver/packages/bugondriver/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:pzhukov:bugondriver/bugondriver)
 
 #### Forked from https://lkw.readthedocs.io/en/latest/doc/06_kernel_bug_reporting.html
 #### Linux Kernel Workbook
 #### https://github.com/rishiba/
 #### Copyright 2016, Rishi Agrawal
 #### ---
-#### https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration
-#### https://documentation.suse.com/sbp/server-linux/html/SBP-KMP-Manual-SLE12SP2/index.html
-#### https://linuxkamarada.com/en/2019/03/19/integrating-the-open-build-service-with-github/
-#### [https://www.suse.com/c/using-opensuse-build-service-create-and-distribute-kernel-module-packages/](https://www.suse.com/c/using-opensuse-build-service-create-and-distribute-kernel-module-packages/)
+
 
 
 ## description
@@ -26,7 +23,7 @@ This chapter will give you example with the proc interface on how to use the deb
 Install needs packages to your system using commands bellow:
 ```bash
 export KERNEL_VERSION=$(uname -r) # get Kernel version and Flavor
-zypper in -y kbuild kernel-sources-$(KERNEL_VERSION)
+zypper in -y kbuild kernel-default-devel-$(KERNEL_VERSION)
 ```
 use kbuild
 ```
@@ -59,7 +56,6 @@ echo 4 > /proc/bugon_driver
     <param name="scm">git</param>
     <param name="revision">main</param>
     <param name="extract">bugondriver.spec</param>
-    <param name="extract">_multibuild</param>
   </service>
   <service mode="buildtime" name="tar" />
   <service mode="buildtime" name="recompress">
@@ -67,3 +63,8 @@ echo 4 > /proc/bugon_driver
     <param name="compression">xz</param>
   </service>
 </services>
+
+#### https://openbuildservice.org/help/manuals/obs-user-guide/cha.obs.scm_ci_workflow_integration
+#### https://documentation.suse.com/sbp/server-linux/html/SBP-KMP-Manual-SLE12SP2/index.html
+#### https://linuxkamarada.com/en/2019/03/19/integrating-the-open-build-service-with-github/
+#### [https://www.suse.com/c/using-opensuse-build-service-create-and-distribute-kernel-module-packages/](https://www.suse.com/c/using-opensuse-build-service-create-and-distribute-kernel-module-packages/)
