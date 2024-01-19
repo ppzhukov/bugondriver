@@ -12,7 +12,11 @@ BuildRequires:  %{kernel_module_package_buildreqs}
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
-%if %{fedora_version} %{rhel_version} 
+%if %{fedora_version} 
+BuildRequires: redhat-rpm-config
+%endif
+
+%if %{rhel_version} 
 BuildRequires: redhat-rpm-config
 %endif
 
