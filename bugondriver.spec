@@ -69,5 +69,5 @@ done
 
 * Fri Jan 18 2024 Pavel Zhukov <pp.zhukov@gmail.com>
 - First build.
-* Fri Jan 21 2024 Pavel Zhukov <pp.zhukov@gmail.com>
+* Sun Jan 21 2024 Pavel Zhukov <pp.zhukov@gmail.com>
 - Added support for CentOS/Fedora.
