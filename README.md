@@ -26,8 +26,13 @@ This chapter will give you example with the proc interface on how to use the deb
 zypper in -y bugondriver-kmp-default
 ```
 * load module
+For an unupdated kernel:
 ```bash
 insmod /lib/modules/$(uname -r)/extra/bugondriver.ko
+```
+For an updated kernel
+```bash
+insmod /lib/modules/$(uname -r)/weak-updates/extra/bugondriver.ko
 ```
 * send signal to kernel
 ```bash
