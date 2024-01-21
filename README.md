@@ -24,7 +24,7 @@ This chapter will give you example with the proc interface on how to use the deb
 ```bash
 zypper in -y bugondriver-kmp-default
 ```
-load module
+* load module
 ```bash
 insmod /lib/modules/$(uname -r)/extra/bugondriver.ko
 ```
