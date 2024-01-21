@@ -48,17 +48,19 @@ echo 2 > /proc/bugondriver
 ```
 
 ## Make and install modules manualy
+### Set Up the Build System.
 [https://www.suse.com/c/using-sles-and-the-sle-sdk-build-kernel-module-package-kmp/](https://www.suse.com/c/using-sles-and-the-sle-sdk-build-kernel-module-package-kmp/)
-Install needs packages to your system using commands bellow:
 ```bash
-export KERNEL_VERSION=$(uname -r) # get Kernel version and Flavor
-zypper in -y kbuild kernel-default-devel-$(KERNEL_VERSION)
+zypper in -t pattern Basis-Devel
+zypper in build
 ```
-use kbuild
+### Make module. 
+[https://docs.kernel.org/kbuild/modules.html](https://docs.kernel.org/kbuild/modules.html)
+```bash
+make -C /lib/modules/$(uname -r)/build M=$PWD
+make -C /lib/modules/$(uname -r)/build M=$PWD modules_install
 ```
-kbuild
-```
-insert module
+### Insert module.
 ```bash
 insmod bugondriver.ko
 ```
