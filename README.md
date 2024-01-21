@@ -2,6 +2,7 @@
 BUG(), BUG_ON(), dump_stack(), panic() example
 
 Supported OS: SLES15SP[345], OpenSUSE15.[345], CentOS[78], CentOS 8 Stream, Fedora3[789], Fedora Rawhide, ScientificLinux 7
+
 ![GPL3](https://img.shields.io/badge/license-GPLv3-blue)
 [![build result](https://build.opensuse.org/projects/home:pzhukov:bugondriver/packages/bugondriver/badge.svg?type=percent)](https://build.opensuse.org/package/show/home:pzhukov:bugondriver/bugondriver)
 
