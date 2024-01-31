@@ -1,4 +1,12 @@
-#norootforbuild
+# norootforbuild
+
+# The following line tells the buildservice to save the project certificate as
+# %_sourcedir/_projectcert.crt
+# needssslcertforbuild
+# The BRP_PESIGN_FILES variable must be set to a space separated list of
+# directories or patterns matching files that need to be signed.  E.g., packages
+# that include firmware files would set BRP_PESIGN_FILES='*.ko /lib/firmware'
+export BRP_PESIGN_FILES='*.ko'
 
 Name:           bugondriver
 Version:                1.0
@@ -19,10 +27,11 @@ BuildRequires:  kernel-devel
 
 %if 0%{?sle_version}||0%{?centos_version} == 700||0%{?rhel_version} == 700
 BuildRequires:  %{?kernel_module_package_buildreqs}
+BuildRequires:  pesign-obs-integration
 %endif
 
 %if 0%{?sle_version}||0%{?centos_version} == 700||0%{?rhel_version} == 700
-%kernel_module_package
+%kernel_module_package -x debug -x trace -c %_sourcedir/_projectcert.crt 
 %endif
 
 %description
@@ -66,6 +75,8 @@ done
 %endif
 
 %changelog
+* Wen Jan 31 2024 Pavel Zhukov <pp.zhukov@gmail.com>
+- Added signing phase for kernel modules to support UEFI secure boot in SUSE/Fedora 7 Base.
 * Sun Jan 21 2024 Pavel Zhukov <pp.zhukov@gmail.com>
 - Added support for CentOS/Fedora.
 * Thu Jan 18 2024 Pavel Zhukov <pp.zhukov@gmail.com>
