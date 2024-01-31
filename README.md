@@ -23,8 +23,15 @@ This chapter will give you example with the proc interface on how to use the deb
 * Add [Repositories](https://software.opensuse.org//download.html?project=home%3Apzhukov%3Abugondriver&package=bugondriver) to your system
 * Install package
 ```bash
-zypper in -y bugondriver-kmp-default
+zypper in -y bugondriver-kmp-default bugondriver-ueficert
 ```
+* If you UEFI Secure Boot:
+  * prepare to enroll certificate to MOC (you should use the entered password at the next step when enrolling)
+```bash
+mokutil --import /etc/uefi/certs/6FC7859A.crt
+```
+  * Reboot server and enroll certificate at server console
+
 * load module
 
 For an unupdated kernel:
