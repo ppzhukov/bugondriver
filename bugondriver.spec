@@ -3,10 +3,6 @@
 # The following line tells the buildservice to save the project certificate as
 # %_sourcedir/_projectcert.crt
 # needssslcertforbuild
-# The BRP_PESIGN_FILES variable must be set to a space separated list of
-# directories or patterns matching files that need to be signed.  E.g., packages
-# that include firmware files would set BRP_PESIGN_FILES='*.ko /lib/firmware'
-export BRP_PESIGN_FILES='*.ko'
 
 Name:           bugondriver
 Version:                1.0
@@ -67,6 +63,11 @@ for flavor in %flavors_to_build; do
        make -C %{kernel_source $flavor} modules M=$PWD/obj/$flavor
 done
 %install
+# The BRP_PESIGN_FILES variable must be set to a space separated list of
+# directories or patterns matching files that need to be signed.  E.g., packages
+# that include firmware files would set BRP_PESIGN_FILES='*.ko /lib/firmware'
+export BRP_PESIGN_FILES='*.ko'
+
 export INSTALL_MOD_PATH=$RPM_BUILD_ROOT
 export INSTALL_MOD_DIR=extra
 for flavor in %flavors_to_build; do
