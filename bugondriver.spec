@@ -76,7 +76,7 @@ done
 %endif
 
 %changelog
-* Wen Jan 31 2024 Pavel Zhukov <pp.zhukov@gmail.com>
+* Wed Jan 31 2024 Pavel Zhukov <pp.zhukov@gmail.com>
 - Added signing phase for kernel modules to support UEFI secure boot in SUSE/Fedora 7 Base.
 * Sun Jan 21 2024 Pavel Zhukov <pp.zhukov@gmail.com>
 - Added support for CentOS/Fedora.
